@@ -8,7 +8,12 @@ export default {
       },
       height: {
         '720': '720px',
-      }
+      },
+      animation: {
+
+        typing: 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+        
+        },
     },
   },
   plugins: [],

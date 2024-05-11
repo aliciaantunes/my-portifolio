@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-right-color: transparent; }
+    50% { border-right-color: #a855f7; }
+  }
+  
+  .typing-effect {
+    overflow: hidden;
+    border: .15em solid black; /* Define a cor da borda geral */
+    border-right: .15em solid transparent; /* Define a cor inicial da borda direita como transparente */
+    white-space: nowrap;
+    text-align: left;
+    padding-right: .2em; /* Espaço extra para o cursor */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  }
+  
