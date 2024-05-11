@@ -51,29 +51,56 @@ function App() {
     <div id="Home" className="flex items-center justify-center h-screen bg-black text-white w-1700 h-720 flex">
   <div className="flex justify-between w-full px-80">
     <div>
-    <p>&lt;p&gt;Hello World&lt;/p&gt;</p>
+    <p className="text-purple-500">&lt;p&gt;Hello World&lt;/p&gt;</p>
       <h1 className="text-8xl">I am Alícia</h1>
       <p className="text-2xl">Front-end Web Developer</p>
-      <a className="border-2 border-white border solid" href="#ContactMe">Talk to me</a>
+      <a className="text-purple-500 border-2 border-purple-500 border solid" href="#ContactMe">Talk to me</a>
     </div>
-    <div className="w-96 h-96 bg-purple-500 rounded-full"></div>
+    <div className="relative w-96 h-96 bg-purple-500 flex items-center justify-center" style={{ borderRadius: "20% 80% 30% 70% / 60% 40% 60% 40%", boxShadow: "10px 10px 20px rgba(0,0,0,0.2)" }}>
+    <img src="/images/alicia_pic.png" alt="picture of me <3"  style={{ marginTop: '60px' }}  />
+    </div>
   </div>
 </div>
 
-    <div id="AboutMe" className="flex flex-col items-center justify-center h-screen bg-gray-500 text-white">
-      <h1>About me</h1>
-      <div className="text-white w-1700 h-720 flex" style={{ width: '50%', marginLeft: 'auto' }}>
-         <p>From a young age, I transformed my passion for coding into a professional skill set and gained experience working as a freelancer. Now I&apos;m Seeking a more stable position to apply my skills and grow.  </p>
-         <p>My main Web Development stack is React(Redux), Node JS, ES6+ JavaScript, TypeScript, Python and I&apos;m always open to learn new technologies.</p>
-         <p>When working on web applications I usually choose to use React, Redux, Jest (unit tests), Tailwind, Webpack, Airbnb ESlint configuration, Axios and Codium AI to help with the development. </p>
-         <p>I&apos;m always quick to learn, and ready to tackle new challenges.
-        Eager to join a dynamic team and deliver innovative web solutions!</p>
-       </div>
-     </div>
+<div id="AboutMe" className="flex items-center justify-center h-screen" style={{ backgroundColor: '#121212', color: 'white', width: '1700px', height: '720px' }}>
+  <div className="flex w-1/2 justify-center items-center">
+    <img src="/images/foto_alicia_inteira.jpg" alt="picture of me <3" style={{ maxWidth: '50%', maxHeight: '50%', objectFit: 'contain', marginRight: '10px', borderRadius: '20px' }} />
+  </div>
+  <div className="flex w-1/2 justify-center items-center flex-col" style={{ height: '800px' }}>
+  <div className="text-white" style={{ width: '350px', height: '80px', marginLeft: '-380px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+   <h1 className="text-5xl text-purple-500">About me</h1>
+    <p>From a young age, I transformed my passion for coding into a professional skill set and gained experience working as a freelancer. Now I&apos;m Seeking a more stable position to apply my skills and grow.  </p>
+    <p>My main Web Development stack is React(Redux), Node JS, ES6+ JavaScript, TypeScript, Python and I&apos;m always open to learn new technologies.</p>
+    <p>When working on web applications I usually choose to use React, Redux, Jest (unit tests), Tailwind, Webpack, Airbnb ESlint configuration, Axios and Codium AI to help with the development. </p>
+    <p>I&apos;m always quick to learn, and ready to tackle new challenges.
+    Eager to join a dynamic team and deliver innovative web solutions!</p>
+   </div>
+  </div>
+</div>
 
-     <div id="MyProjects" className="flex items-center justify-center h-screen bg-black text-white w-1700 h-720 flex">
-      <h1>Projects</h1>
+<div id="MyProjects" className="bg-black text-white w-1700 h-720 flex flex-col">
+  <h1 className="text-5xl text-purple-500 text-center">Projects</h1>
+  <div className="flex-grow flex justify-center items-center">
+
+  <div className="text-white" style={{ backgroundColor: '#121212', width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
+     <p style={{ marginBottom: '20px' }}>My reads</p>
+     <img src="/images/giphy.gif" alt="gif" style={{ width: '130px' }}/>
+     <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
+        <p style={{ textAlign: 'center' }}>Book tracking app developed as a project for the Udacity course completion</p>
      </div>
+  </div>
+
+  <div className="text-white" style={{ backgroundColor: '#121212', width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
+     <p style={{ marginBottom: '20px' }}>Poll-Pick</p>
+     <img src="/images/giphy.gif" alt="gif" style={{ width: '130px' }}/>
+     <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
+        <p style={{ textAlign: 'center' }}>App where employees can create polls where they present two options, and their colleagues can vote for their preferred choice. Developed as a final project for the Udacity course completion.</p>
+     </div>
+  </div>
+
+
+  </div>
+</div>
 
      <div id="MyKnowlege" className="flex items-center justify-center h-screen bg-gray-500 text-white w-1700 h-720 flex">
       <h1>Knowlege</h1>
