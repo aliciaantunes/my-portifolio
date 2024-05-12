@@ -1,51 +1,70 @@
 import { useState, useEffect } from 'react'; 
 
 function App() {
-  const [isAtHome, setIsAtHome] = useState(true);
-  const [currentSection, setCurrentSection] = useState('');
+  const [activeSection, setActiveSection] = useState('');
+  
+ 
+  const handleNavigation = (event, sectionId) => {
+    event.preventDefault();
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      const homeSection = document.getElementById("Home");
-      const aboutSection = document.getElementById("AboutMe");
-      const homeHeight = homeSection.clientHeight;
-      const aboutTop = aboutSection.offsetTop;
-      const aboutHeight = aboutSection.clientHeight;
-      const scrollPosition = window.scrollY;
-
-      setIsAtHome(scrollPosition < homeHeight);
-      if (scrollPosition >= aboutTop && scrollPosition < aboutTop + aboutHeight) {
-        setCurrentSection('AboutMe');
-      } else {
-        setCurrentSection('');
-      }
+      const sections = ['Home', 'AboutMe', 'MyProjects', 'MyKnowlege', 'ContactMe'];
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        const rect = element.getBoundingClientRect();
+        return rect.top <= 50 && rect.bottom >= 50;
+      });
+      setActiveSection(currentSection);
     };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  const textColorClass = activeSection === 'Home' ? "text-purple-500" : "text-white";
+  const iconColorClass =  activeSection === 'Home' ? "text-purple-500" : "text-white";
 
-  const textColorClass = isAtHome ? "text-purple-500" : "text-white";
-  const iconColorClass = isAtHome ? "text-purple-500" : "text-white";
+  console.log('activeSection', activeSection);
 
    return (
     <>
     <div className={`fixed top-0 left-0 w-full z-10 flex items-center justify-between space-x-4 ${textColorClass}`} style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', height: '70px'  }}>
       <h1 className="text-3xl font-bold">
-        <a className="logo close" style={{ marginLeft: "75px", fontFamily: '"Gemunu Libre", sans-serif', fontWeight: '100' }} href="#Home">Alícia Antunes</a>
+        <a
+          className="logo close" 
+          style={{ marginLeft: "75px", fontFamily: '"Gemunu Libre", sans-serif', fontWeight: '100' }}
+          href="#Home"
+        >
+          Alícia Antunes
+        </a>
       </h1>
       <div className="flex justify-center flex-1">
         <ul className="flex">
           <li className="mr-4">
-          <a id="aboutNav" className={`close opacity-50 hover:opacity-100 hover:text-lg hover:underline hover:underline-offset-4 ${currentSection === 'AboutMe' ? 'text-lg underline underline-offset-4 opacity-100' : ''}`} href="#AboutMe">About me</a>
+            <a
+              id="aboutNav"
+              onClick={(e) => handleNavigation(e, 'AboutMe')}
+              className={`close hover:opacity-100 hover:text-lg hover:underline hover:underline-offset-4 ${activeSection === 'AboutMe' ? 'text-lg text-white underline underline-offset-4' : 'opacity-50'}`}
+            >
+              About me
+            </a>
+
           </li>
           <li className="mr-4">
-            <a id="projectsNav" className="close opacity-50 hover:opacity-100 hover:text-lg hover:underline hover:underline-offset-4" href="#MyProjects">Projetos</a>
+            <a 
+            id="projectsNav" 
+            onClick={(e) => handleNavigation(e, 'MyProjects')}
+            className={`close hover:opacity-100 hover:text-lg hover:underline hover:underline-offset-4 ${activeSection === 'MyProjects' ? 'text-lg text-white underline underline-offset-4' : 'opacity-50'}`}>Projetos</a>
           </li>
+          
           <li>
-            <a id="knowledgeNav" className="close opacity-50 hover:opacity-100 hover:text-lg hover:underline hover:underline-offset-4" href="#MyKnowlege">Knowlege</a>
+            <a 
+            id="knowledgeNav" 
+            onClick={(e) => handleNavigation(e, 'MyKnowlege')}
+            className={`close hover:opacity-100 hover:text-lg hover:underline hover:underline-offset-4 ${activeSection === 'MyKnowlege' ? 'text-lg text-white underline underline-offset-4' : 'opacity-50'}`}>Knowlege</a>
           </li>
         </ul>
       </div>
@@ -114,33 +133,33 @@ function App() {
   <h1 className="text-5xl text-purple-500 text-center" style={{marginTop: "100px", marginLeft:"20px", marginRight:"170px"}}>Projects</h1>
   <div className="grid grid-cols-3 gap-5 max-w-7xl items-center justify-center h-full" style={{marginRight:"150px", marginTop: "10px"  }}>
 
-  <div className="text-white" style={{ backgroundColor: '#121212', width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
+  <div className="text-white group bg-[#121212] hover:bg-neutral-800 shadow-lg transition duration-300 ease-in-ou" style={{  width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
      <p style={{ marginBottom: '20px' }}>My reads</p>
-     <img src="/images/giphy.gif" alt="gif" style={{ width: '130px' }}/>
+     <img src="/images/giphy.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '130px' }}/>
      <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
         <p style={{ textAlign: 'center' }}>Book tracking app developed as a project for the Udacity course completion</p>
      </div>
   </div>
 
-  <div className="text-white" style={{ backgroundColor: '#121212', width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
+  <div className="text-white group bg-[#121212] hover:bg-neutral-800 shadow-lg transition duration-300 ease-in-ou" style={{  width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
      <p style={{ marginBottom: '20px' }}>Poll-Pick</p>
-     <img src="/images/giphy.gif" alt="gif" style={{ width: '130px' }}/>
+     <img src="/images/giphy.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '130px' }}/>
      <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
         <p style={{ textAlign: 'center' }}>App where employees can create polls where they present two options, and their colleagues can vote for their preferred choice. Developed as a final project for the Udacity course completion.</p>
      </div>
   </div>
 
-  <div className="text-white" style={{ backgroundColor: '#121212', width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
+  <div className="text-white group bg-[#121212] hover:bg-neutral-800 shadow-lg transition duration-300 ease-in-ou" style={{  width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
      <p style={{ marginBottom: '20px' }}>Shopping cart</p>
-     <img src="/images/giphy.gif" alt="gif" style={{ width: '130px' }}/>
+     <img src="/images/giphy.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '130px' }}/>
      <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
         <p style={{ textAlign: 'center' }}>Shopping cart developed as a project for the Udacity course completion.</p>
      </div>
   </div>
 
-   <div className="text-white" style={{ backgroundColor: '#121212', width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
+  <div className="text-white group bg-[#121212] hover:bg-neutral-800 shadow-lg transition duration-300 ease-in-ou" style={{  width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
      <p style={{ marginBottom: '20px' }}>Shopping cart</p>
-     <img src="/images/giphy.gif" alt="gif" style={{ width: '130px' }}/>
+     <img src="/images/giphy.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '130px' }}/>
      <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
         <p style={{ textAlign: 'center' }}>Shopping cart developed as a project for the Udacity course completion.</p>
      </div>

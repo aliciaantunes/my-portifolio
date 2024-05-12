@@ -21,4 +21,5 @@
     padding-right: .2em; /* Espaço extra para o cursor */
     animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
   }
+
   
