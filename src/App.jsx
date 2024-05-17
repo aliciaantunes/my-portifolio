@@ -126,13 +126,11 @@ function App() {
             <img src="/images/foto_alicia_inteira.jpg" alt="picture of me <3" style={{ maxWidth: '50%', maxHeight: '50%', objectFit: 'contain', marginRight: '10px', borderRadius: '20px' }} />
           </div>
           <div className="flex w-1/2 justify-center items-center flex-col" style={{ height: '800px' }}>
-            <div className="text-white" style={{ width: '350px', height: '80px', marginLeft: '-380px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <h1 className="text-5xl text-purple-500">About me</h1>
-              <p>From a young age, I transformed my passion for coding into a professional skill set and gained experience working as a freelancer. Now I&apos;m Seeking a more stable position to apply my skills and grow.  </p>
-              <p>My main Web Development stack is React(Redux), Node JS, ES6+ JavaScript, TypeScript, Python and I&apos;m always open to learn new technologies.</p>
-              <p>When working on web applications I usually choose to use React, Redux, Jest (unit tests), Tailwind, Webpack, Airbnb ESlint configuration, Axios and Codium AI to help with the development. </p>
-              <p>I&apos;m always quick to learn, and ready to tackle new challenges.
-                Eager to join a dynamic team and deliver innovative web solutions!</p>
+          <div className="text-white" style={{ width: '700px', height: '80px', marginLeft: '-200px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <h1 className="text-6xl text-purple-500"style={{marginBotton:"15px"}}>About me</h1>
+              <p style={{ fontSize: '18px', marginBottom: '20px', marginTop:"30px" }}>I&apos;ve been a developer since I was 18, and over time, I&apos;ve accumulated significant experience in various technologies. My primary tools include React, Node.js, ES6+, TypeScript, and Redux for state management. Additionally, I&apos;m proficient in git and agile methodologies, allowing me to collaborate effectively in teams and quickly adapt to new challenges.</p>
+  <p style={{ fontSize: '18px', marginBottom: '20px' }}>I have strong skills in data consumption and API integrations, something that has always fascinated me. I&apos;ve worked as a freelancer on various projects, which has given me the opportunity to apply my skills in different contexts and solve real-world problems. Now, I&apos;m seeking an opportunity that will allow me to further grow and contribute significantly to a talented and innovative team.</p>
+  <p style={{ fontSize: '18px', marginBottom: '20px' }}>I&apos;m passionate about development and truly believe in the power of collaboration. Communication is one of my greatest strengths, and I love working in teams to create amazing solutions. I believe that exchanging ideas and diversity of perspectives are fundamental to the success of any project.</p>
             </div>
           </div>
         </div>
@@ -142,10 +140,11 @@ function App() {
           <div className="grid grid-cols-3 gap-5 max-w-7xl items-center justify-center h-full" style={{ marginRight: "10px", marginTop: "10px" }}>
 
             <div className="group bg-[#121212] hover:bg-neutral-800 shadow-lg transition duration-300 ease-in-ou" style={{ width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px', position: "relative" }} >
-              <p style={{ marginBottom: '20px' }}>My reads</p>
-              <img src="/images/giphy.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '130px' }} />
+            <p className="mb-5 text-2xl text-purple-500">My reads</p>
+              <img src="/images/my-reads.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '210px', borderRadius: '5px' }} />
 
               <div className='icons-container' style={{ display: 'flex', flexDirection: 'row' }}>
+              <a href="https://github.com/aliciaantunes/Udacity-My-Reads" target="_blank" rel="noopener noreferrer">
                 <div className="group/icon flex" style={{
                   width: '60px',
                   height: '60px'
@@ -162,7 +161,9 @@ function App() {
                     </g>
                   </svg>
                 </div>
+                </a>
 
+                <a href="https://udacity-my-reads.onrender.com/" target="_blank" rel="noopener noreferrer">
                 <div className="group/eye flex" style={{
                   width: '60px',
                   height: '60px',
@@ -178,7 +179,9 @@ function App() {
                       <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" className="stroke-black group-hover/eye:stroke-white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g>
                   </svg>
                 </div>
+                </a>
               </div>
+              
 
               <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
                 <p style={{ textAlign: 'center' }}>Book tracking app developed as a project for the Udacity course completion.</p>
@@ -186,9 +189,11 @@ function App() {
             </div>
 
             <div className="text-white group bg-[#121212] hover:bg-neutral-800 shadow-lg transition duration-300 ease-in-ou" style={{ width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
-              <p style={{ marginBottom: '20px' }}>Poll-Pick</p>
-              <img src="/images/giphy.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '130px' }} />
+              <p className="mb-5 text-2xl text-purple-500">Poll-Pick</p>
+              <img src="/images/employe-poll.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '210px', borderRadius: '5px' }} />
               <div className='icons-container' style={{ display: 'flex', flexDirection: 'row' }}>
+               
+              <a href="https://github.com/aliciaantunes/Udacity-employee-poll" target="_blank" rel="noopener noreferrer">
                 <div className="group/icon flex" style={{
                   width: '60px',
                   height: '60px'
@@ -205,7 +210,9 @@ function App() {
                     </g>
                   </svg>
                 </div>
+                </a>
 
+                <a href="https://udacity-employee-poll.onrender.com" target="_blank" rel="noopener noreferrer">
                 <div className="group/eye flex" style={{
                   width: '60px',
                   height: '60px',
@@ -221,6 +228,7 @@ function App() {
                       <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" className="stroke-black group-hover/eye:stroke-white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g>
                   </svg>
                 </div>
+                </a>
               </div>
               <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
                 <p style={{ textAlign: 'center' }}>App where employees can create polls where they present two options. Developed as a final project for the Udacity course completion.</p>
@@ -228,9 +236,11 @@ function App() {
             </div>
 
             <div className="text-white group bg-[#121212] hover:bg-neutral-800 shadow-lg transition duration-300 ease-in-ou" style={{ width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
-              <p style={{ marginBottom: '20px' }}>Shopping cart</p>
-              <img src="/images/giphy.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '130px' }} />
+              <p className="mb-5 text-2xl text-purple-500">Shopping cart</p>
+              <img src="/images/my-cart.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '210px', borderRadius: '5px' }} />
               <div className='icons-container' style={{ display: 'flex', flexDirection: 'row' }}>
+                
+              <a href="https://github.com/aliciaantunes/My-shopping-cart-project" target="_blank" rel="noopener noreferrer">
                 <div className="group/icon flex" style={{
                   width: '60px',
                   height: '60px'
@@ -247,7 +257,9 @@ function App() {
                     </g>
                   </svg>
                 </div>
+                </a>
 
+                <a href="https://my-shopping-cart-project.onrender.com/" target="_blank" rel="noopener noreferrer">
                 <div className="group/eye flex" style={{
                   width: '60px',
                   height: '60px',
@@ -263,6 +275,7 @@ function App() {
                       <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" className="stroke-black group-hover/eye:stroke-white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g>
                   </svg>
                 </div>
+                </a>
               </div>
               <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
                 <p style={{ textAlign: 'center' }}>Shopping cart developed as a project for the Udacity course completion.</p>
@@ -270,9 +283,11 @@ function App() {
             </div>
 
             <div className="text-white group bg-[#121212] hover:bg-neutral-800 shadow-lg transition duration-300 ease-in-ou" style={{ width: '300px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', margin: '30px' }}>
-              <p style={{ marginBottom: '20px' }}>Shopping cart</p>
-              <img src="/images/giphy.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '130px' }} />
+              <p className="mb-5 text-2xl text-purple-500">This portfolio</p>
+              <img src="/images/my-portfolio.gif" alt="gif" className='group-hover:opacity-50 transition duration-300 ease-in-out' style={{ width: '210px', borderRadius: '5px' }} />
               <div className='icons-container' style={{ display: 'flex', flexDirection: 'row' }}>
+                
+              <a href="https://github.com/aliciaantunes/my-portifolio" target="_blank" rel="noopener noreferrer">
                 <div className="group/icon flex" style={{
                   width: '60px',
                   height: '60px'
@@ -289,25 +304,12 @@ function App() {
                     </g>
                   </svg>
                 </div>
+                </a>
 
-                <div className="group/eye flex" style={{
-                  width: '60px',
-                  height: '60px',
-                  marginTop: "19px",
-                  marginLeft: "10px"
-                }}>
-                  <svg viewBox="-3.84 -3.84 31.68 31.68" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" style={{ strokeWidth: "0" }}>
-                      <rect x="-3.84" y="-3.84" width="31.68" height="31.68" rx="15.84" className="fill-white group-hover/eye:fill-black" style={{ strokeWidth: "0" }}></rect></g>
-                    <g id="SVGRepo_tracerCarrier" style={{ strokeLinecap: "round", strokeLinejoin: "round" }}></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" className="stroke-black group-hover/eye:stroke-white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                      <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" className="stroke-black group-hover/eye:stroke-white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g>
-                  </svg>
-                </div>
+               
               </div>
               <div className="flex items-center justify-center w-72 h-36" style={{ display: 'flex', paddingRight: "25px", paddingLeft: "25px" }}>
-                <p style={{ textAlign: 'center' }}>Shopping cart developed as a project for the Udacity course completion.</p>
+                <p style={{ textAlign: 'center' }}>My personal portfolio where you can explore my projects, skills, and professional background in more detail.</p>
               </div>
             </div>
 
@@ -407,7 +409,7 @@ function App() {
             </div>
 
             <div className='bg-zinc-950 hover:scale-110 transition duration-300 ease-in-out' style={{ width: "150px", height: "200px", margin: "10px", display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', borderRadius: '10px' }}>
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style={{ fill: "#000000" }}>
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style={{ fill: "#000000", width: "100", height: "100" }}>
                 <g id="SVGRepo_bgCarrier" style={{ strokeWidth: "0" }}></g>
                 <g id="SVGRepo_tracerCarrier" style={{ strokeLinecap: "round", strokeLinejoin: "round" }}></g>
                 <g id="SVGRepo_iconCarrier">
